@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <script th:src="@{/index.js}"></script>
+    </head>
+    <body>
+        <!-- Ensin serveri puolen API toimimaan, sitten javascriptilla Json matskut -->
+        <form id="comment" th:action="@{/comment}" method="POST">
+            <input type="text" name="username" id="username"/>
+            <input type="text" name="comment" id="comment"/>
+            <input type="submit" onclick="send()"/>
+        </form>
+    </body>
+</html>
