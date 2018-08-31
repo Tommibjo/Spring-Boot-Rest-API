@@ -8,7 +8,6 @@ package com.yritys.boardtwo.controllers;
 import com.yritys.boardtwo.jpa.Comment;
 import com.yritys.boardtwo.jpa.CommentRepository;
 import java.util.List;
-import java.util.Objects;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,6 +18,10 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  *
  * @author Tommi
+ * 
+ * RestControllerin metodit 100% toiminallisia.
+ * 
+ * 
  */
 @RestController
 @RequestMapping("comment")

@@ -7,14 +7,17 @@ and open the template in the editor.
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>TODO supply a title</title>
+        <script th:src="@{/jquery-3.3.1.js}"></script>
         <script th:src="@{/index.js}"></script>
     </head>
     <body>
-        <!-- Ensin serveri puolen API toimimaan, sitten javascriptilla Json matskut -->
-        <form id="comment" th:action="@{/comment}" method="POST">
-            <input type="text" name="username" id="username"/>
-            <input type="text" name="comment" id="comment"/>
+        <p id="AllComments"></p>
+        <form id="comment3">
+            <input type="text" name="username" id="username1"/>
+            <input type="text" name="comment" id="comment2"/>
             <input type="submit" onclick="send()"/>
+            <button>click me</button>
+            <p>testi</p>
         </form>
     </body>
 </html>
