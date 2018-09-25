@@ -20,20 +20,24 @@ public class Comment extends AbstractPersistable<Long> {
     private Long id;
     private String username;
     private String comment;
+    private String postTime;
 
-    public Comment(String username, String comment) {
+    public Comment(String username, String comment, String postTime) {
         this.id = id;
         this.username = username;
         this.comment = comment;
+        this.postTime = postTime;
     }
 
     public Comment() {
     }
 
+    @Override
     public Long getId() {
         return id;
     }
 
+    @Override
     public void setId(Long id) {
         this.id = id;
     }
@@ -52,6 +56,14 @@ public class Comment extends AbstractPersistable<Long> {
 
     public void setComment(String comment) {
         this.comment = comment;
+    }
+
+    public String getPostTime() {
+        return postTime;
+    }
+
+    public void setPostTime(String postTime) {
+        this.postTime = postTime;
     }
 
 }

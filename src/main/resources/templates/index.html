@@ -7,17 +7,15 @@ and open the template in the editor.
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>TODO supply a title</title>
-        <script th:src="@{/jquery-3.3.1.js}"></script>
         <script th:src="@{/index.js}"></script>
+        <link th:href="@{/index.css}" rel="stylesheet" ></link>
     </head>
     <body>
-        <p id="AllComments"></p>
-        <form id="comment3">
-            <input type="text" name="username" id="username1"/>
-            <input type="text" name="comment" id="comment2"/>
-            <input type="submit" onclick="send()"/>
-            <button>click me</button>
-            <p>testi</p>
+            <span id="Messages"></span>
+        <form onsubmit="return false">
+            <input type="text" name="username" id="usernameInput"/>
+            <input type="text" name="comment" id="commentInput"/>
+            <input type="submit" onclick="onClick()"/>
         </form>
     </body>
 </html>

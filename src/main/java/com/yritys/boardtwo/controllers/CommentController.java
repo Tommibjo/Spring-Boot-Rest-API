@@ -7,6 +7,9 @@ package com.yritys.boardtwo.controllers;
 
 import com.yritys.boardtwo.jpa.Comment;
 import com.yritys.boardtwo.jpa.CommentRepository;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,10 +21,12 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  *
  * @author Tommi
- * 
- * RestControllerin metodit 100% toiminallisia.
- * 
- * 
+ *
+ * Tämä controller lähettää vastaukset restful method kutsuihin: POST
+ * postComment(@RequestBody Comment comment) GET (getComments(),
+ * getComment(/{id})) DELETE (deletecomment(/{id})
+ *
+ *
  */
 @RestController
 @RequestMapping("comment")
@@ -32,6 +37,7 @@ public class CommentController {
 
     @RequestMapping(method = RequestMethod.GET)
     public List<Comment> getComments() {
+
         return commentrepository.findAll();
     }
 
@@ -47,11 +53,13 @@ public class CommentController {
 
     @RequestMapping(method = RequestMethod.POST)
     public Comment postComment(@RequestBody Comment comment) {
+        DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+        Date date = new Date();
+        comment.setPostTime(dateFormat.format(date));
         if (comment.getUsername().isEmpty() || comment.getUsername().equals("")) {
             comment.setUsername("Anonymous internet user");
             return commentrepository.saveAndFlush(comment);
         }
         return commentrepository.saveAndFlush(comment);
     }
-
 }
